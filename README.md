@@ -1,4 +1,4 @@
-# [Nisway-Assignment](https://nisway-assignment.herokuapp.com/)
+# [Niswey-Assignment](https://nisway-assignment.herokuapp.com/)
 
 
 This is assignment of News Articles 
