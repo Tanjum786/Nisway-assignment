@@ -1,38 +1,38 @@
-import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { getdata } from "./Apicall/getdata";
 import "./App.css";
+import { ArticleDetailes, ArticleHeading, NavBar } from "./components";
 
 function App() {
   const [data, setdata] = useState([]);
+  const [singleNewsData, setSingleNewsData] = useState({});
+  const [loading, setloading] = useState(false);
 
-  useEffect(
-    () => async () => {
-      try {
-        let response = await axios.get(
-          "https://techcrunch.com/wp-json/wp/v2/posts?per_page=10"
-        );
-        setdata(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    },
-    []
-  );
+  useEffect(() => () => getdata(setdata, setloading), []);
 
   return (
-    <div className="App">
-      {data.map((datas) => {
-        return (
-          <>
-            <span>date: {datas.date}</span>
-            <h1>title: {datas.title.rendered}</h1>
-            <h1>excerpt: {datas.excerpt.rendered}</h1>
-            <h1>author: {datas.parsely.meta.author.map((el) => el.name)}</h1>;
-          </>
-        );
-      })}
-    </div>
+    <>
+      <NavBar />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <ArticleHeading
+              data={data}
+              setSingleNewsData={setSingleNewsData}
+              setloading={setloading}
+              loading={loading}
+            />
+          }
+        />
+        <Route
+          path="/articledetail/:articlename"
+          element={<ArticleDetailes singleNewsData={singleNewsData} />}
+        />
+      </Routes>
+    </>
   );
 }
 
