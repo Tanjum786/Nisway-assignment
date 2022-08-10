@@ -1,0 +1,29 @@
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 7px 2px #94a3b8;
+    padding: 2.5rem;
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.778);
+    z-index: 9999;
+
+}
+
+.navTitle {
+    font-size: 2.5rem;
+    color: #fafafa;
+}
+
+.githubLink {
+    color: #fafafa;
+    font-size: 3rem;
+}
+
+@media screen and (max-width:780px) {
+    .navContainer {
+        width: 100%;
+    }
+
+
+}

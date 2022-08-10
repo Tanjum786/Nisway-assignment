@@ -1,0 +1,60 @@
+.articlePageLink,
+.singleArticle-container {
+    display: flex;
+}
+
+.contentContainer {
+    padding: 0 10rem 10rem;
+}
+
+.articlePageLink {
+    height: 100vh;
+    display: flex;
+    font-size: 4rem;
+    color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+.singleArticle-container {
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+
+}
+
+.SingleauthorName {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.titleSingelArticle {
+    text-align: center;
+    padding: 2rem;
+    font-size: 3rem;
+}
+
+.content {
+    font-size: 2rem;
+    line-height: 40px;
+
+}
+
+.articleLink {
+    font-size: 2rem;
+}
+
+@media screen and (max-width:780px) {
+    .singleArticle-container {
+        width: 100%;
+        overflow: hidden;
+    }
+    .content{
+        line-height: 20px;
+    }
+    .contentContainer{
+        padding: 0 5rem 0 5rem;
+    }
+
+}

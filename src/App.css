@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+body{
+    width: 100%;
+}
+
+
+.navLink {
+    text-decoration: none;
+    color: #e0e7ff;
+}
+
+@media screen and (max-width:768px) {
+    html {
+        font-size: 55%;
+    }
+
+}
+
+@media screen and (max-width:425px) {
+    html {
+        font-size: 45%;
+    }
+
+}
+
+@media screen and (max-width:320px) {
+    html {
+        font-size: 35%;
+    }
+
+}
