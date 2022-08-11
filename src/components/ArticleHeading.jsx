@@ -2,10 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./articleheading.css";
 
-export const ArticleHeading = ({ data, setSingleNewsData, loading }) => {
-  const clickHandler = (newsArticele) => {
-    setSingleNewsData(newsArticele);
-  };
+export const ArticleHeading = ({ data, loading }) => {
   return (
     <>
       <div>
@@ -19,11 +16,8 @@ export const ArticleHeading = ({ data, setSingleNewsData, loading }) => {
                   <ul className="headingList">
                     <li>
                       <NavLink
-                        to={
-                          "/articledetail/" + newsArticele.parsely.meta.headline
-                        }
+                        to={`/articledetail/${newsArticele.id}`}
                         className="navLink headingLink"
-                        onClick={() => clickHandler(newsArticele)}
                         dangerouslySetInnerHTML={{
                           __html: newsArticele.parsely.meta.headline,
                         }}

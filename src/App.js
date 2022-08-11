@@ -7,7 +7,6 @@ import { ArticleDetailes, ArticleHeading, NavBar } from "./components";
 
 function App() {
   const [data, setdata] = useState([]);
-  const [singleNewsData, setSingleNewsData] = useState({});
   const [loading, setloading] = useState(false);
 
   useEffect(() => () => getdata(setdata, setloading), []);
@@ -21,15 +20,14 @@ function App() {
           element={
             <ArticleHeading
               data={data}
-              setSingleNewsData={setSingleNewsData}
               setloading={setloading}
               loading={loading}
             />
           }
         />
         <Route
-          path="/articledetail/:articlename"
-          element={<ArticleDetailes singleNewsData={singleNewsData} />}
+          path="/articledetail/:id"
+          element={<ArticleDetailes data={data} />}
         />
       </Routes>
     </>

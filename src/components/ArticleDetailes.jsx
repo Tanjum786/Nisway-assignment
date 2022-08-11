@@ -1,8 +1,12 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import "./articledetailes.css";
 
-export const ArticleDetailes = ({ singleNewsData }) => {
+export const ArticleDetailes = ({ data }) => {
+  const { id } = useParams();
+  const singleNewsData = data.find(
+    (newsarticle) => newsarticle.id === parseInt(id)
+  );
   const splitDate = singleNewsData?.date_gmt?.replace("T", "  / ");
 
   return (
